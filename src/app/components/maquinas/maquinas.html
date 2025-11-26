@@ -1,1 +1,19 @@
-<p>maquinas works!</p>
+<div class="div-principal">
+    <header class="cabecalho">
+        <div id="div-header-titulo">
+        <h1>AgroTec</h1>
+        </div>
+        <div class="div-perfil">
+            <button class="BOLA"></button>
+            <div class="div-bola-fortatacao">
+                <h4>Perfil</h4>
+            </div>
+        </div>
+    </header>
+    <main class="sec-comentarios">
+        <h3 id="mural-maquinas">Gerenciador de Maquinas</h3>
+        @For(maquina of maquinas; track maquina){
+        <app-card-maquinas [maquina]="maquinas"></app-card-maquinas>
+        }
+    </main>
+</div>

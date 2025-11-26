@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Maquina } from './maquina';
 
 @Component({
   selector: 'app-card-maquinas',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './card-maquinas.css',
 })
 export class CardMaquinas {
-
+  @Input()
+  maquina : Maquina = {
+    Id: 0,
+    Nome: '',
+    DataCadastro: new Date(""),
+    Status: false
+  }
 }
