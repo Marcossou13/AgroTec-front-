@@ -8,11 +8,6 @@ import { Maquina } from './maquina';
   styleUrl: './card-maquinas.css',
 })
 export class CardMaquinas {
-  @Input()
-  maquina : Maquina = {
-    Id: 0,
-    Nome: '',
-    DataCadastro: new Date(""),
-    Status: false
-  }
+  @Input() maquina: any; // recebe do componente pai
 }
+

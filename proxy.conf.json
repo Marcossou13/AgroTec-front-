@@ -1,0 +1,8 @@
+{
+  "/maquinas": {
+    "target": "http://localhost:5219",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

@@ -1,7 +1,7 @@
 <div class="div-principal">
     <header class="cabecalho">
         <div id="div-header-titulo">
-        <h1>AgroTec</h1>
+            <h1>AgroTec</h1>
         </div>
         <div class="div-perfil">
             <button class="BOLA"></button>
@@ -11,9 +11,9 @@
         </div>
     </header>
     <main class="sec-comentarios">
-        <h3 id="mural-maquinas">Gerenciador de Maquinas</h3>
-        @for(maquina of maquinas; track maquina) {
-        <app-card-maquinas [maquina]="maquina"></app-card-maquinas>
-        }
+        <div class="container-lista" *ngFor="let item of maquinas">
+            <app-card-maquinas [maquina]="item">
+            </app-card-maquinas>
+        </div>
     </main>
 </div>
