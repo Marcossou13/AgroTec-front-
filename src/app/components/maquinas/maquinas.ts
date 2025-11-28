@@ -1,27 +1,19 @@
 import { Component } from '@angular/core';
 import { CardMaquinas } from './card-maquinas/card-maquinas';
 import { Maquina } from './card-maquinas/maquina';
-// import { NgFor } from '../../../../node_modules/@angular/common';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-maquinas',
-  imports: [CardMaquinas],
+  imports: [CardMaquinas,CommonModule],
   templateUrl: './maquinas.html',
   styleUrl: './maquinas.css',
 })
 export class Maquinas {
-  maquinas : Maquina[] = [
-  {
-    Id: 1,
-    Nome: 'Roberto',
-    DataCadastro: new Date("14-03-2007"),
-    Status: false
-  },
-  {
-    Id: 2,
-    Nome: 'Cleberson',
-    DataCadastro: new Date("16-07-2013"),
-    Status: true
-  }       
-  ]
+  maquinas : Maquina[] = []
+  constructor (private http : HttpClient){}
+  ngOnInit(): void {
+    this.http.get<Maquina[]>("http://localhost:4200/api/maquinas").subscribe((dados) => this.maquinas = dados);
+  }
 }
